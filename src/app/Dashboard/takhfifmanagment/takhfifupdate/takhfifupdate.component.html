@@ -1,0 +1,272 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="container">
+    <div class="row d-flex justify-content-center mt-5">
+      <div class="col-lg-12 col-sm-12 col-md-12">
+        <div class="card card-primary shadow-lg">
+          <div class="card-header primary-color">
+            <h3 class="card-title text-white"> ویرایش تخفیف </h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-9 col-lg-9 col-sm-12">
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>کد محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="product_Id"
+                        class="form-control"
+                        placeholder="کد محصول را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="product_Id.invalid && (product_Id.dirty || product_Id.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="product_Id.errors.required">
+                          کد محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>عنوان تخفیف :</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="title"
+                        class="form-control"
+                        placeholder=" عنوان تخفیف را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="title.invalid && (title.dirty || title.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="title.errors.required">
+                          عنوان تخفیف  را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label> نوع تخفیف:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="offer_type"
+                        class="form-control"
+                        placeholder=" نوع تخفیف را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="offer_type.invalid && (offer_type.dirty || offer_type.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="offer_type.errors.required">
+                           نوع تخفیف را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>  کد تخفیف:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="offer_code"
+                        class="form-control"
+                        placeholder="  کد تخفیف را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="
+                        offer_code.invalid &&
+                          (offer_code.dirty || offer_code.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="offer_code.errors.required">
+                            کد تخفیف را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>  تاریخ شروع:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="start_date"
+                        class="form-control"
+                        placeholder="  تاریخ شروع را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="start_date.invalid && (start_date.dirty || start_date.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="start_date.errors.required">
+                            تاریخ شروع را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label> تاریخ  پایان:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="end_date"
+                        class="form-control"
+                        placeholder="  تاریخ پایان را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="
+                        end_date.invalid && (end_date.dirty || end_date.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="end_date.errors.required">
+                           تاریخ پایان را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>   درصد تخفیف:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="percent_offer"
+                        class="form-control"
+                        placeholder="   درصد تخفیف را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="
+                        percent_offer.invalid && (percent_offer.dirty || percent_offer.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="percent_offer.errors.required">
+                            درصد تخفیف را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>    حداکثر استفاده کننده:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="max_count"
+                        class="form-control"
+                        placeholder="   حداکثر استفاده کننده  را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="
+                        max_count.invalid && (max_count.dirty || max_count.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="max_count.errors.required">
+                            حداکثر استفاده کننده  را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>    حداکثر استفاده شده:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="used_count"
+                        class="form-control"
+                        placeholder="   حداکثر استفاده شده  را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="
+                        used_count.invalid && (used_count.dirty || used_count.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="used_count.errors.required">
+                            حداکثر استفاده شده  را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label> وضعیت تخفیف:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <mat-radio-group
+                      formControlName="active"
+
+                    >
+                      <mat-radio-button value="true">فعال</mat-radio-button>
+                      <mat-radio-button value="false">غیرفعال</mat-radio-button>
+                    </mat-radio-group>
+
+
+                      <div
+                        *ngIf="
+                          active.invalid && (active.dirty || active.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="active.errors.required">
+                          وضعیت محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-success border-success btn-rounded text-white "><i class="material-icons fa-2x mr-3">
+              edit
+              </i>ویرایش تخفیف جدید</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

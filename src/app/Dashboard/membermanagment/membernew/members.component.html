@@ -1,0 +1,153 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="container">
+  <div class="row  d-flex justify-content-center">
+    <!-- Left col -->
+
+    <section class="col-lg-12 connectedSortable">
+      <!-- /.card *****-->
+      <div class="card card-primary shadow-lg mt-2">
+        <div class="card-header primary-color ">
+          <h3 class="card-title text-white">عضو جدید</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-9 col-lg-9 col-sm-12">
+              <div class="col-md-12 mb-3">
+                <div class="input-group flex-nowrap">
+                  <div class="col-md-3 col-xs-3"><label> ایمیل:</label></div>
+                  <div class="col-md-9 col-xs-9">
+                    <div class="input-group-prepend">
+                      <input
+                        type="email"
+                        formControlName="email"
+                        class="form-control"
+                      />
+                    </div>
+                    <div
+                      *ngIf="email.invalid && (email.dirty || email.touched)"
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="email.errors.required">
+                        ایمیل را وارد نمائید
+                      </div>
+                      <div *ngIf="email.errors.email">
+                        فرمت ایمیل اشتباه می باشد
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <div class="input-group flex-nowrap">
+                  <div class="col-md-3 col-xs-3">
+                    <label> گذر واژه:</label>
+                  </div>
+                  <div class="col-md-9 col-xs-9">
+                    <div class="input-group-prepend ">
+                      <input
+                        type="text"
+                        formControlName="password"
+                        class="form-control"
+                      />
+                    </div>
+                    <div
+                      *ngIf="
+                        password.invalid && (password.dirty || password.touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="password.errors.required">
+                           گذر واژه را وارد نمائید
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <div class="input-group flex-nowrap">
+                  <div class="col-md-3 col-xs-3">
+                    <label>  نقش کاربر:</label>
+                  </div>
+                  <div class="col-md-9 col-xs-9">
+                    <div class="input-group-prepend ">
+                      <select class="browser-default custom-select">
+
+                        <option value="1">مدیریت</option>
+                        <option value="2">فنی</option>
+                        <option value="3">مالی</option>
+                        <option value="3">فروش</option>
+                      </select>
+                    </div>
+                    <div
+                      *ngIf="
+                      role.invalid && (role.dirty || role.touched)
+                      "
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="role.errors.required">
+                        کلید واژه عنوان خبر را وارد نمائید
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.left col -->
+
+    </section>
+    <div></div>
+  </div>
+  </div>
+  <div class="container">
+  <div class="row d-flex justify-content-center">
+    <section class="col-lg-12 connectedSortable">
+      <!-- /.card *****-->
+      <div class="card card-primary shadow-lg mt-2">
+        <div class="card-header primary-color ">
+          <h3 class="card-title text-white">دسترسی ها</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="row d-flex flex-column" style="margin-right: 30px;">
+           <div>
+            <mat-checkbox>بخش مدیریت اخبار</mat-checkbox>
+
+           </div>
+           <div>
+            <mat-checkbox>بخش مدیریت مقاله ها</mat-checkbox>
+
+           </div>
+           <div>
+            <mat-checkbox>بخش مدیریت  محصولات</mat-checkbox>
+
+           </div>
+           <div>
+            <mat-checkbox>بخش مدیریت  ویدئوها</mat-checkbox>
+
+           </div>
+           <div>
+            <mat-checkbox>بخش مدیریت  امور مالی</mat-checkbox>
+
+           </div>
+          </div>
+
+        </div>
+        <div class="card-footer brown lighten-5">
+          <button type="submit" class="btn text-white btn-rounded btn-success border-success float-left">
+            <i class="material-icons fa-2x text-white mr-3">
+              add
+              </i>
+            ثبت عضو</button>
+
+        </div>
+        </div>
+
+    </section>
+
+  </div>
+</div>
+</form>

@@ -1,0 +1,127 @@
+.input-group{
+  font-family: IRANSansWeb_Bold;
+  font-size: 12px;
+  font-variation-settings: "wght" 10,"wdth" 100,"slnt" 0,"DOTR" 0,"DOTS" 0;
+
+}
+.input-group:hover{
+  font-variation-settings: "wght" 10,"wdth" 100,"slnt" 0,"DOTR" 0,"DOTS" 0;
+
+}
+.fas{
+  font-family: "Font Awesome 5 Pro"!important;
+}
+//.fab{
+//  font-family: "Font Awesome 5 Pro"!important;
+//}
+.fa{
+  font-family: "Font Awesome 5 Pro"!important;
+}
+.NAP-row.row{
+  margin-right: 1px!important;
+  margin-left: 1px!important;
+}
+*{
+  cursor: pointer;
+}
+.NAP-border{
+  border-width: thin;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.menucart-i {
+  line-height: 0;
+  float: right;
+  font-size: 13px;
+  color: #fff;
+  background-color: #3fa1b3!important;
+  //box-shadow: 1px 1px 1px #296584!important;
+  padding: 16px 0!important;
+  //border-radius: 0 5px 5px 0;
+}
+.menucart-num {
+  font-size: 11px;
+  position: relative;
+  line-height: 0;
+  background-color: #3fa1b3;
+  padding: 0 10px;
+  color: #fff;
+  float: right;
+  box-shadow: 1px 1px 1px #296584!important;
+  font-weight: bolder;
+  border-radius: 10px;
+  height: 35px;
+}
+.menucart-name {
+  line-height: 10px;
+  padding: 14px 5px;
+  display: inline-block;
+  float: right;
+  font-family: IRANSansWeb_Bold;
+}
+.menucart-cart {
+  font-family: IRANSansWeb_Bold;
+  float: right;
+  width: 23px;
+  height: 23px;
+  border-radius: 100px;
+  font-size: 11px;
+  color: #777;
+  background-color: #fff;
+  padding: 12px 8px 0;
+  display: inline-block;
+  margin: 6px 10px 0 0;
+}
+.menucart-show {
+  padding: 13px 15px 9px 5px;
+  display: inline-block;
+  float: right;
+}
+
+.header.row {
+ border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  //border-style: solid;
+  //border-color: #00c851;
+  //border-width: thin;
+  margin-right: 1px!important;
+  margin-left: 1px!important;
+}
+
+
+
+.btn-login.btn:hover{
+  background-color: #0b51c5!important;
+  color: white!important;
+}
+.btn.btn-rounded.header-cart:hover{
+  color: white!important;
+}
+.btn.btn-rounded{
+  line-height: 0.7!important;
+}
+.btn.btn-rounded.header-cart{
+  line-height: 0.7!important;
+
+}
+.text_logo{
+  color: #100d5d;
+}
+.mobile{
+  display: none;
+}
+@media (max-width: 768px) {
+  .header{
+    display: none;
+  }
+  .mobile{
+    display: none;
+  }
+  .mizkhedmat-title{
+    display: none;
+  }
+}
+.text-info:hover{
+  color: #00C851!important;
+}

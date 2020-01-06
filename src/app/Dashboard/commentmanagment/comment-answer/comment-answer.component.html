@@ -1,0 +1,77 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="container">
+  <div class="row  d-flex justify-content-center">
+    <!-- Left col -->
+
+    <section class="col-lg-12  connectedSortable">
+      <!-- /.card *****-->
+      <div class="card card-primary shadow-lg mt-2">
+        <div class="card-header primary-color ">
+          <h3 class="card-title text-white"> پاسخ نظر</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="row ">
+            <div class="col-md-9 col-lg-9 col-sm-12">
+              <div class="col-md-12 mb-3">
+                <div class="input-group flex-nowrap">
+                  <div class="col-md-3 col-xs-3"><label> اظهار نظر:</label></div>
+                  <div class="col-md-9 col-xs-9">
+                    <div class="input-group-prepend">
+                      <input
+                        type="text"
+                        formControlName="name"
+                        class="form-control"
+                      />
+
+                    </div>
+                    <div
+                    *ngIf="name.invalid && (name.dirty || name.touched)"
+                    class="alert alert-danger"
+                  >
+                    <div *ngIf="name.errors.required">
+                     عنوان نظر را وارد نمائید
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3 ">
+                <div class="input-group flex-nowrap">
+                  <div class="col-md-3 col-xs-3">
+                    <label> متن پاسخ:</label>
+                  </div>
+                  <div class="col-md-9 col-xs-9">
+                    <div class="input-group-prepend ">
+                      <ckeditor formControlName="replay"></ckeditor>
+
+                    </div>
+                    <div
+                    *ngIf="replay.invalid && (replay.dirty || replay.touched)"
+                    class="alert alert-danger"
+                  >
+                    <div *ngIf="replay.errors.required">
+                         متن پاسخ نظر  را وارد نمائید
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="card-footer">
+          <button type="submit"  class="btn btn-success border-success btn-rounded text-white "><i class="material-icons fa-2x mr-3">
+            add
+            </i>ثبت  پاسخ نظر</button>
+        </div>
+      </div>
+      <!-- /.left col -->
+
+    </section>
+    <div></div>
+  </div>
+  </div>
+</form>

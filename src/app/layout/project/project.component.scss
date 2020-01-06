@@ -1,0 +1,183 @@
+$accent: #217fff;
+//$accent: #52be7f;
+$cardBackground: darken($accent,5);
+//$cardBackground: #333;
+//*{
+//  font-family: IRANSansWeb_Bold;
+//}
+.icon {
+  line-height: 1.3;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: #40c4ff;
+  margin: 0 auto;
+  margin-top: 20px;
+  /*-webkit-border-radius: 50%;*/
+  /*-moz-border-radius: 50%;*/
+  /*-ms-border-radius: 50%;*/
+  border-radius: 50%;
+  transition-property: width;
+  transition-duration: 1s;
+  transition-delay: 0.5s;
+  transform: rotate(0);
+  transition: ease-out .5s;
+}
+.icon:hover{
+  line-height: 1.3;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: #006064;
+  margin: 0 auto;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5%;
+  transform: rotate(360deg);
+  transition: ease-out .5s;
+}
+
+
+
+
+//.card-footer:hover{
+//  background-color: #0b51c5!important;
+//}
+//.card.card-project{
+//  border-style: solid;
+//  border-width: thin;
+//  border-bottom-left-radius: 20px;
+//}
+.modal-dialog.modal-notify.modal-success .modal-header {
+  /*background-color: #FF8800;*/
+  border-radius: 10px;
+}
+.modal-content{
+  border-color: #1f94e8;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 10px!important;
+}
+.btn-project{
+background-color: var(--blue);
+}
+.tile {
+  //box-shadow: 0 5px 15px rgba(124, 139, 243, 0.75) !important;
+  width: 300px;
+  height: 300px;
+  margin: 2em;
+  position: relative;
+  float: left;
+  cursor: pointer;
+  .front, .back1 {
+    display: block;
+    top: 0px; bottom: 0;
+    left: 0; right: 0;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    overflow: hidden;
+    text-align: justify;
+  }
+
+  h3, p, a {
+    padding: 0 20px;
+  }
+  img {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+
+    height: 180px;
+    width: 100%;
+  }
+  .front {
+    background: #eafff2;
+    transition: all .5s ease-in-out;
+    z-index: 2;
+    border-style: solid;
+    border-color: #dedeff;
+    border-radius: 10px;
+    h3 {
+      font-size: 2em;
+      color: #dedeff;
+      text-shadow: 0 0 5px #23b7ff;
+      margin-top: -1.5em;
+      margin-bottom: 1.5em;
+      font-family:yekan ;
+      text-align: center;
+    }
+    a{
+      font-family: IRANSansWeb_Bold;
+      font-size: 20px;
+      text-align: center;
+    }
+    p{
+      font-family: IRANSansWeb_Bold;
+      font-size: 16px;
+      color: white;
+
+    }
+    p:hover{
+      color: #0d47a1;
+    }
+  }
+  .back1{
+    background: $cardBackground;
+    color: white;
+    z-index: 1;
+    padding-top: 50px;
+    border-style: solid;
+    border-color: #8c8c8c;
+    border-width: 1px;
+    height: 300px;
+    border-radius: 10px;
+    font-family:Iransans-Light ;
+
+    h3 {
+      font-size: 1.5em;
+      color: white;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    a {
+      display: block;
+      font-size: 0.9em;
+      color: white;
+      border-top: 1px solid white;
+      margin: 0 20px;
+      padding: .5em 0;
+      font-family: IRANSansWeb_Bold;
+    }
+    a:hover{
+      font-size: 1em;
+    }
+  }
+  &:hover {
+    .front {
+      top: -300px;
+      transform: rotate(2deg);
+    }
+  }
+}
+h2{
+  color: #a12de2;
+  text-align: center;
+}
+img.img-responsive {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.title-project{
+  font-family: IRANSansWeb_Bold;
+}
+.card-body{
+  background-color: var(--primary);
+}
+.modal-title{
+  font-family: IRANSansWeb_Bold;
+}
+.btn.btn-rounded:hover{
+  color: white!important;
+}

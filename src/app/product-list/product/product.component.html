@@ -1,0 +1,52 @@
+<div class=" text-center title-product  success-color ">
+  <span class=" font-weight-bold text-white pt-4">محصولات </span>
+</div>
+<div class="row mb-3">
+
+  <div class="col-xl-3 col-lg-4 col-md-6 col-12 pb-30 pt-10 " *ngFor="let i of productlist" style="padding-right: 20px; padding-left: 25px; margin-bottom: 20px;">
+    <div class="ee-product h-100 border border-info">
+
+      <!-- Image -->
+      <div class="image ">
+
+        <a  class="img"><img src="./assets/images/product/11.jpg" alt="Product Image" style="height: 200px"></a>
+
+        <div class="wishlist-compare">
+          <a href="#" data-tooltip="مقایسه"><i class="fa fa-info"></i></a>
+          <a href="#" data-tooltip="اضافه کردن به لیست علاقه مندی ها"><i class="fa fa-heart"></i></a>
+        </div>
+
+        <a href="#" class="add-to-cart"><i class="fa fa-shopping-cart"></i><span> سبد خرید</span></a>
+
+      </div>
+
+      <!-- Content -->
+      <div class="content ">
+
+        <!-- Category & Title -->
+        <div class="category-title text-center">
+
+          <a  class="cat title">بتاوان- بی 1 آ</a>
+
+        </div>
+        <!-- Price & Ratting -->
+        <div class="price-ratting">
+
+          <h5 class="price text-info">15,000,000 تومان</h5>
+          <div class="ratting">
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star checked"></i>
+            <i class="fa fa-star"></i>
+          </div>
+
+        </div>
+
+    <button class="btn btn-karbord btn-block text-white" style="background-color: var(--blue);" data-toggle="modal" data-target="#modal_address1">مشاهده جزئیات</button>
+      </div>
+
+    </div><!-- Product End -->
+  </div>
+
+</div>

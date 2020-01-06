@@ -1,0 +1,192 @@
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-info">-->
+
+<!--  <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--    <span class="navbar-toggler-icon"></span>-->
+<!--  </button>-->
+
+<!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--    <ul class="navbar-nav mr-auto">-->
+<!--      <li class="nav-item active">-->
+<!--        <a class="nav-link" href="#">صفحه نخست <span class="sr-only">(current)</span></a>-->
+<!--      </li>-->
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          تام-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="#">درباره ما</a>-->
+<!--          <a class="dropdown-item" href="#"> قوانین و مقررات</a>-->
+<!--          <div class="dropdown-divider"></div>-->
+<!--          <a class="dropdown-item" href="#">  افق های تام</a>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">محصولات</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          خدمات-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="#">دانش نامه مغز</a>-->
+<!--          <a class="dropdown-item" href="#"> حریم خصوص مشتریان  </a>-->
+<!--          <div class="dropdown-divider"></div>-->
+<!--          <a class="dropdown-item" href="#">انتقادات ، پیشنهادات و شکایات</a>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          نمایندگان فروش-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a class="dropdown-item" href="#">لیست نمایندگان</a>-->
+<!--          <a class="dropdown-item" href="#">چگونه نماینده شوید </a>-->
+
+<!--        </div>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--      <a class="nav-link" href="#">اخبار</a>-->
+<!--    </li>-->
+<!--      <li class="nav-item">-->
+<!--      <a class="nav-link" href="#">دعوت به همکاری</a>-->
+<!--    </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">تماس با ما</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+<!--  </div>-->
+<!--</nav>-->
+<mat-sidenav-container class="sidenav-container" dir="rtl">
+  <mat-sidenav #drawer class="sidenav " fixedInViewport="false"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <mat-toolbar>تقویت امواج مغز (تام)</mat-toolbar>
+    <hr>
+    <mat-nav-list>
+      <!--<a mat-list-item  class="collapse" *ngFor="let item of navItems">{{item.displayName}}-->
+      <!--<a mat-list-item *ngIf="item.children" class="collapse">{{item.children.displayName}}</a>-->
+      <!--</a>-->
+      <a  mat-list-item class="" href="#" (click)="drawer.toggle()"><i class="material-icons mr-5">home</i>صفحه اصلی</a>
+
+      <li class="nav-item mr-4" style="list-style:none">
+        <a mat-list-item  data-toggle="collapse" data-target="#demo"><i class="material-icons mr-5">
+          speaker_notes
+        </i>تام<i class="fa fa-caret-down ml-1"></i></a>
+        <div id ="demo" class="collapse">
+          <a  mat-list-item class="sub-menu "  (click)="drawer.toggle()"><i class="material-icons mr-5">
+            send
+          </i>درباره ما </a>
+          <a  mat-list-item class="sub-menu "  (click)="drawer.toggle()"><i class="material-icons mr-5">
+            border_color
+          </i>قوانین و مقررات</a>
+          <a  mat-list-item class="sub-menu"  (click)="drawer.toggle()"><i class="material-icons mr-5">
+            pageview
+          </i>افق های تام </a>
+
+        </div>
+      </li>
+      <a  mat-list-item class="" [routerLink]="''" (click)="drawer.toggle()"><i class="material-icons mr-5">
+        desktop_mac
+      </i>محصولات </a>
+      <li class="nav-item mr-4" style="list-style:none">
+        <a mat-list-item  data-toggle="collapse" data-target="#demo1"><i class="material-icons mr-5">
+          speaker_notes
+        </i>خدمات<i class="fa fa-caret-down ml-1"></i></a>
+        <div id ="demo1" class="collapse">
+          <a  mat-list-item class="sub-menu "  (click)="drawer.toggle()"><i class="material-icons mr-5">
+            send
+          </i> دانش نامه مغز </a>
+          <a  mat-list-item class="sub-menu "  (click)="drawer.toggle()"><i class="material-icons mr-5">
+            border_color
+          </i>قوانین و مقررات</a>
+          <a  mat-list-item class="sub-menu"  (click)="drawer.toggle()"><i class="material-icons mr-5">
+            pageview
+          </i>افق های تام </a>
+
+        </div>
+      </li>
+      <li class="nav-item mr-4" style="list-style:none">
+        <a mat-list-item  data-toggle="collapse" data-target="#demo2"><i class="material-icons mr-5">
+          speaker_notes
+        </i>نمایندگان فروش<i class="fa fa-caret-down ml-1"></i></a>
+        <div id ="demo2" class="collapse">
+          <a  mat-list-item class="sub-menu "  (click)="drawer.toggle()"><i class="material-icons mr-5">
+            send
+          </i> لیست نمایندگان</a>
+          <a  mat-list-item class="sub-menu "  (click)="drawer.toggle()"><i class="material-icons mr-5">
+            border_color
+          </i>چگونه نماینده شوید</a>
+
+
+        </div>
+      </li>
+      <a  mat-list-item class="" [routerLink]="''" (click)="drawer.toggle()"><i class="material-icons mr-5">
+        desktop_mac
+      </i>اخبار </a>
+      <a  mat-list-item class="" [routerLink]="''" (click)="drawer.toggle()"><i class="material-icons mr-5">
+        desktop_mac
+      </i>مقالات </a>
+      <a  mat-list-item class="" [routerLink]="''" (click)="drawer.toggle()"><i class="material-icons mr-5">
+        desktop_mac
+      </i>دعوت به همکاری </a>
+      <a  mat-list-item class="" [routerLink]="''" (click)="drawer.toggle()"><i class="material-icons mr-5">
+        desktop_mac
+      </i>تماس با ما </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar  class="primary-color">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="mizkhedmat-title ml-5">تقویت امواج مغز (تام)</span>
+      <span class="spacer"></span>
+      <div class="menu">
+        <a mat-list-item href="#">صفحه اصلی </a>
+        <button mat-button [matMenuTriggerFor]="beforeMenu2">تام<i class="fa fa-caret-down ml-1"></i></button>
+        <mat-menu #beforeMenu2="matMenu" xPosition="before">
+          <a  mat-list-item class="sub-menu text-center">درباره ما </a>
+          <a  mat-list-item class="sub-menu text-center" >قوانین و مقررات </a>
+          <a  mat-list-item class="sub-menu text-center" >افق های تام </a>
+        </mat-menu>
+        <a mat-list-item [routerLink]="''">محصولات</a>
+        <button mat-button [matMenuTriggerFor]="beforeMenu1">خدمات<i class="fa fa-caret-down ml-1"></i></button>
+        <mat-menu #beforeMenu1="matMenu" xPosition="after">
+          <a  mat-list-item class="sub-menu text-center">دانش نامه مغز  </a>
+          <a  mat-list-item class="sub-menu text-center" >حریم خصوصی مشتریان   </a>
+          <a  mat-list-item class="sub-menu text-center" >انتقادات، پیشنهتدات و شکایات</a>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="beforeMenu" class="bt">نمایندگی فروش<i class="fa fa-caret-down ml-1"></i></button>
+        <mat-menu #beforeMenu="matMenu" xPosition="after">
+          <a  mat-list-item class="sub-menu text-center">لیست نمایندگان</a>
+          <a  mat-list-item class="sub-menu text-center" >چگونه نماینده شوید </a>
+        </mat-menu>
+        <a mat-list-item class="sub-menu">اخبار</a>
+        <a mat-list-item>مقالات</a>
+        <a mat-list-item>دعوت به همکاری</a>
+        <a mat-list-item>تماس با ما</a>
+      </div>
+      <div  style="margin-right: 49%">
+        <!--<ul class=" col-md-12 nav navbar-nav navbar-left float-left">-->
+
+        <a target="_blank" href=""> ورود</a>
+
+        <!--</ul>-->
+      </div>
+
+
+
+    </mat-toolbar>
+    <ng-content>
+    </ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

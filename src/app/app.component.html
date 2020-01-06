@@ -1,0 +1,16 @@
+<div class="NAP-container rtl" *ngIf="showMenu">
+  <!-- <app-header *ngIf="showMenu"></app-header> -->
+  <app-topmenu>
+    <router-outlet></router-outlet>
+   
+  </app-topmenu>
+  <ngx-spinner
+    bdColor="rgba(3, 169, 244, 0.7) "
+    size="medium"
+    color="#00C851"
+    type="ball-scale-multiple"
+  >
+    <p style="font-size: 20px; color: white">منتظر بمانید</p>
+  </ngx-spinner>
+  <!-- <app-footer></app-footer> -->
+</div>

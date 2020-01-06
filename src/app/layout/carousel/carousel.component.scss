@@ -1,0 +1,23 @@
+*{
+  font-family: IRANSansWeb_Bold;
+}
+
+.fa{
+  font-family: "Font Awesome 5 Free"!important;
+}
+.carousel .carousel-control-prev-icon {
+  width: 80px!important;
+  height: 80px!important;
+}
+.carousel .carousel-control-next-icon {
+  width: 80px!important;
+  height: 80px!important;
+}
+.carousel .carousel-indicators li {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #007bff;
+}
+

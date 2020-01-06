@@ -1,0 +1,129 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+// @import url(assets/plugins/font-awesome/css/font-awesome.min.css);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+
+// @import url(assets/dist/css/custom-style.css);
+// @import url(assets/plugins/iCheck/square/blue.css);
+
+
+
+
+@font-face {
+  font-family: 'yekan';
+  src: url(./assets/fonts/Yekan.eot);
+  src: url(./assets/fonts/Yekan.eot?#iefix) format("embedded-opentype"),
+  url(./assets/fonts/Yekan.woff) format("woff"),
+  url(./assets/fonts/Yekan.ttf) format("truetype"),
+  url(./assets/fonts/Yekan.svg#BYekan) format("svg");
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'IRANSansWeb';
+  src: url('./assets/fonts/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'IRANSansWeb_Bold';
+  src: url('./assets/fonts/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RazAnar';
+  src: url('./assets/fonts/BRazAnar.ttf') format('truetype');
+  font-display: fallback;
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+@font-face {
+  font-family: Vazir;
+  src: url('./assets/fonts/Vazir.eot');
+  src: url('./assets/fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/Vazir.woff2') format('woff2'),
+  url('./assets/fonts/Vazir.woff') format('woff'),
+  url('./assets/fonts/Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: VaziBold;
+  src: url('./assets/fonts/Vazir-Bold.eot');
+  src: url('./assets/fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/Vazir-Bold.woff2') format('woff2'),
+  url('./assets/fonts/Vazir-Bold.woff') format('woff'),
+  url('./assets/fonts/Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('./assets/fonts/Vazir-Light.eot');
+  src: url('./assets/fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/Vazir-Light.woff2') format('woff2'),
+  url('./assets/fonts/Vazir-Light.woff') format('woff'),
+  url('./assets/fonts/Vazir-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('./assets/fonts/Vazir-Medium.eot');
+  src: url('./assets/fonts/Vazir-Medium.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/Vazir-Medium.woff2') format('woff2'),
+  url('./assets/fonts/Vazir-Medium.woff') format('woff'),
+  url('./assets/fonts/Vazir-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('./assets/fonts/Vazir-Thin.eot');
+  src: url('./assets/fonts/Vazir-Thin.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/Vazir-Thin.woff2') format('woff2'),
+  url('./assets/fonts/Vazir-Thin.woff') format('woff'),
+  url('./assets/fonts/Vazir-Thin.ttf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('./assets/fonts/Vazir-Black.eot');
+  src: url('./assets/fonts/Vazir-Black.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/Vazir-Black.woff2') format('woff2'),
+  url('./assets/fonts/Vazir-Black.woff') format('woff'),
+  url('./assets/fonts/Vazir-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,271 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="container">
+    <div class="row d-flex justify-content-center mt-5">
+      <div class="col-lg-12 col-sm-12 col-md-12">
+        <div class="card card-primary shadow-lg">
+          <div class="card-header primary-color">
+            <h3 class="card-title text-white"> ویرایش محصول </h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-9 col-lg-9 col-sm-12">
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>عنوان محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="name"
+                        class="form-control"
+                        placeholder="نام محصول را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="name.invalid && (name.dirty || name.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="name.errors.required">
+                          عنوان محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>کد محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="code"
+                        class="form-control"
+                        placeholder="کد محصول را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="code.invalid && (code.dirty || code.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="code.errors.required">
+                          کد محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>قیمت محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="price"
+                        class="form-control"
+                        placeholder="قیمت محصول را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="price.invalid && (price.dirty || price.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="price.errors.required">
+                          قیمت محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label>قیمت گارانتی محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="price_garranty"
+                        class="form-control"
+                        placeholder="قیمت گارانتی محصول را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="
+                          price_garranty.invalid &&
+                          (price_garranty.dirty || price_garranty.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="price_garranty.errors.required">
+                          قیمت گارانتی محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label> استفاده محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="price_garranty"
+                        class="form-control"
+                        placeholder="استفاده  محصول را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="use.invalid && (use.dirty || use.touched)"
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="use.errors.required">
+                          قیمت گارانتی محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label> تعداد محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="number"
+                        class="form-control"
+                        placeholder="  تعداد را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="
+                          number.invalid && (number.dirty || number.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="number.errors.required">
+                          تعداد محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label> کلید واژه محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <input
+                        formControlName="keyword"
+                        class="form-control"
+                        placeholder="  کلید واژه را وارد نمائید"
+                      />
+
+                      <div
+                        *ngIf="
+                          keyword.invalid && (keyword.dirty || keyword.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="keyword.errors.required">
+                          کلید واژه محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label> جزئیات محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <ckeditor  formControlName="description"></ckeditor>
+
+                      <div
+                        *ngIf="
+                          description.invalid &&
+                          (description.dirty || description.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="description.errors.required">
+                          جزئیات محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="input-group flex-nowrap">
+                    <div class="col-md-3 col-xs-3">
+                      <label> وضعیت محصول:</label>
+                    </div>
+                    <div class="col-md-9 col-lg-9 col-xs-9">
+                      <mat-radio-group
+                      formControlName="active"
+
+                    >
+                      <mat-radio-button value="true">فعال</mat-radio-button>
+                      <mat-radio-button value="false">غیرفعال</mat-radio-button>
+                    </mat-radio-group>
+
+
+                      <div
+                        *ngIf="
+                          active.invalid && (active.dirty || active.touched)
+                        "
+                        class="alert alert-danger"
+                      >
+                        <div *ngIf="active.errors.required">
+                          وضعیت محصول را وارد نمائید
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-3 col-sm-12">
+                <div><label> تصویر محصول :</label></div>
+
+                <form class="md-form">
+                  <div class="file-field">
+                    <div class="z-depth-1-half mb-4"></div>
+                    <div class="d-flex flex-column">
+                      <div>
+                        <img class="w-100 h-100" [src]="imgURL" *ngIf="imgURL" />
+                      </div>
+                      <div class="btn btn-info border-info text-white btn-rounded float-left">
+                        <input
+                          #file
+                          type="file"
+                          accept="image/*"
+                          (change)="onFileChange($event)"
+                        />
+                        <i class="material-icons fa-2x text-white mr-3">
+                          add_photo_alternate
+                          </i>
+                        <!-- <input type="file" (change)="onFileChange($event)"> -->
+                        <span>انتخاب تصویر</span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-success border-success btn-rounded text-white "><i class="material-icons fa-2x mr-3">
+              edit
+              </i>ویرایش محصول</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

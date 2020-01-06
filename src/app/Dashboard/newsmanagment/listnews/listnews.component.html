@@ -1,0 +1,124 @@
+<div class="card-header success-color">
+  <p class="text-white text-center">لیست خبرها بهمن ماه 1398</p>
+</div>
+<table
+  id="dtBasicExample"
+  class="table table-striped table-bordered mt-5"
+  cellspacing="0"
+  width="100%"
+>
+  <thead>
+    <tr>
+      <th class="th-sm" style="width: 1%;">ردیف</th>
+      <th class="th-sm" style="width: 1%;">گروه خبری</th>
+      <th class="th-sm" style="width: 10%;">عنوان خبر</th>
+      <th class="th-sm" style="width: 10%;">کلید وازه عنوان خبر</th>
+      <th class="th-sm" style="width: 3%;">چکیده خبر</th>
+      <th class="th-sm" style="width: 10%;">کلمات کلیدی</th>
+
+      <th class="th-sm">وضعیت خبر</th>
+      <th class="th-sm">جزئیات خبر</th>
+      <th class="th-sm" style="width: 1%;">ویرایش</th>
+      <th class="th-sm" style="width: 1%;">حذف</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <div [innerHTML]="&lt;p&gt;قفثق&lt;&#x2F;p&gt;"></div> -->
+
+    <tr *ngFor="let item of data; let i = index">
+      <td> {{i+1}}</td>
+      <td>{{item['group_name']}}</td>
+      <td>{{item['title']}}</td>
+      <td>{{item['key_title']}}</td>
+      <td>{{item['abstract']}}</td>
+      <td>{{item['keyword']}}</td>
+      <td>
+         <div *ngIf="item['active']">فعال</div>
+         <div *ngIf="!item['active']">غیرفعال</div>
+      </td>
+      <td [innerHTML]="item['detail']"></td>
+      <td>
+        <i
+          class="fa fa-edit text-muted" [routerLink]="['/admin/panel/news/newsupdate',item['_id']]" routerLinkActive="active"
+        ></i>
+      </td>
+      <td>
+        <i
+          class="fa fa-trash text-danger"
+          data-toggle="modal"
+          data-target="#modal_dialogDeleteNew"
+          (click)="readID(item['_id'])"
+        ></i>
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" tabindex="-1">قبلی</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active">
+      <a class="page-link">2 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link">بعدی</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- The Modal  Delete Takhfif -->
+<div class="modal fad rtl" id="modal_dialogDeleteNew">
+  <div
+    class="modal-dialog modal-dialog-centered modal-notify modal-info"
+    role="document"
+  >
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header white-text">
+        <h4 class="modal-title text-white">حذف تخفیف</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true" class="white-text fa-1x">&times;</span>
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <i class="fa fa-times-circle fa-3x mr-5 float-right text-danger"></i>
+        <h4 class="mt-4" style="font-size: 14px">
+          کاربر محترم: از حذف خبر مطمئن هستید؟
+        </h4>
+       
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer text-center">
+        <button
+          class="btn btn-info btn-rounded text-white"
+          style="margin-top: -8px;margin-bottom: -8px"
+          data-dismiss="modal" (click)="ngDelete()"
+        >
+          بله
+        </button>
+
+        <button
+          class="btn btn-info btn-rounded ml-5 text-white"
+          style="margin-top: -8px;margin-bottom: -8px"
+          data-dismiss="modal"
+        >
+          خیر
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- the End Modal Delete Takhfif -->
