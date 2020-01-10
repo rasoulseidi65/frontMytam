@@ -1,8 +1,10 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { MytamwebserviceService } from 'src/app/services/mytamwebservice.service';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
+  @Input() _id:string;
+  @Input() email1:string;
   imgURL: any;
   public message: string;
 userProfile={
@@ -25,6 +28,7 @@ userProfile={
   email:'',
   password:'',
   type:'',
+  id:''
 }
   uplodefile: string;
   fileName: string;
@@ -32,13 +36,20 @@ userProfile={
   successResult: boolean = false;
   constructor(
     private service: MytamwebserviceService,
-    private fb: FormBuilder
-  ) {}
+    private fb: FormBuilder,
+    private route:ActivatedRoute
+  ) {
+    this.route.paramMap.subscribe( params =>
+      this.userProfile.email= params.get('email'));
+      this.route.paramMap.subscribe( params =>
+        this._id= params.get('_id'));
+   console.log(this._id );
+  }
 
   ngOnInit() {
     this.myForm = this.fb.group({
       name: ["", Validators.required],
-      profile: ["", Validators.required],
+      profile: [""],
       mobail: ["", Validators.required],
       tell: ["", Validators.required],
       postalCode: ["", Validators.required],
@@ -46,8 +57,8 @@ userProfile={
       city: ["", Validators.required],
       country:["", Validators.required],
       email:["", Validators.required],
-      password:["", Validators.required],
-    
+      password:[""],
+
     });
   }
   get name() {
@@ -96,7 +107,10 @@ userProfile={
           if ((responseimg.success = true)) {
             form.value.profile = responseimg.data.path;
             console.log(form.value);
-            this.service.postNews(form.value).subscribe(
+            var id=this._id.toString();
+            console.log(id);
+
+            this.service.postUpdateUser( id,form.value).subscribe(
               response => {
                 console.log(response);
                 this.successResult = true;

@@ -44,6 +44,7 @@
           class="fa fa-trash text-danger"
           data-toggle="modal"
           data-target="#modal_dialogDeleteNew"
+          (click)="readID(item['_id'])"
         ></i>
       </td>
     </tr>
@@ -99,7 +100,7 @@
         <button
           class="btn btn-info btn-rounded text-white"
           style="margin-top: -8px;margin-bottom: -8px"
-          data-dismiss="modal"
+          data-dismiss="modal" (click)="onDelete()"
         >
           بله
         </button>

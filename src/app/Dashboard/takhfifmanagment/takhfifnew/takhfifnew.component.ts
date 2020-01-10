@@ -1,3 +1,4 @@
+import { MytamwebserviceService } from './../../../services/mytamwebservice.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,26 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TakhfifnewComponent implements OnInit {
   public imagePath;
+  successResult:boolean=false;
   imgURL: any;
   public message: string;
  uplodefile: string;
   fileName:string;
 
  myForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder , private service :MytamwebserviceService) { }
 
   ngOnInit() {
 
     this.myForm = this.fb.group({
       product_Id: ['', Validators.required],
-      title: ['', Validators.required],
+
       start_date: ['', Validators.required],
       end_date: ['', Validators.required],
       offer_type: ['', Validators.required],
       offer_code: ['', Validators.required],
       percent_offer: ['', Validators.required],
-      max_count: ['', Validators.required],
-      used_count: ['', Validators.required],
+      max_number: ['', Validators.required],
+      remain_number: ['', Validators.required],
       active: ['', Validators.required],
 
     });
@@ -35,9 +37,7 @@ export class TakhfifnewComponent implements OnInit {
   get product_Id() {
     return this.myForm.get("product_Id");
   }
-  get title() {
-    return this.myForm.get("title");
-  }
+
   get offer_type() {
     return this.myForm.get("offer_type");
   }
@@ -53,40 +53,32 @@ export class TakhfifnewComponent implements OnInit {
   get percent_offer() {
     return this.myForm.get("percent_offer");
   }
-  get max_count() {
-    return this.myForm.get("max_count");
+  get max_number() {
+    return this.myForm.get("max_number");
   }
   get active() {
     return this.myForm.get("active");
   }
-  get used_count() {
-    return this.myForm.get("used_count");
+  get remain_number() {
+    return this.myForm.get("remain_number");
   }
-  onFileChange(event) {
-    this.uplodefile = event.target.files;
-    this.fileName= event.target.files.name;
-    this.preview( event.target.files);
-  }
-  preview(files) {
-    if (files.length === 0) return;
 
-    var mimeType = files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      this.message = "Only images are supported.";
-      return;
-    }
-
-    var reader = new FileReader
-    reader.readAsDataURL(files[0]);
-    reader.onload = _event => {
-      this.imgURL = reader.result;
-    };
-  }
   onSubmit(form: FormGroup) {
-    console.log('Valid?', form.valid); // true or false
-    console.log('product_Id', form.value.product_Id);
-    console.log('title', form.value.title);
 
-  }
+            this.service.postOffer(form.value).subscribe(
+              response => {
+                console.log(response);
+                this.successResult = true;
+                setTimeout(() => {
+                  this.successResult = false;
+                }, 6000);
+              },
+              error => {
+                console.log(error);
+              }
+            );
+          }
+
+
 
 }

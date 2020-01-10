@@ -24,21 +24,22 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>345698</td>
-      <td>صندلی راحتی هوشمند-
-      </td>
-      <td>12000</td>
-      <td>بر اساس نقشه مغزی افراد و سفارش مشتری حداکثر 4 حالت برای4 نفر</td>
-      <td>10</td>
-      <td> صندلی</td>
-      <td>فعال </td>
+    <tr *ngFor="let item of data; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{item['name']}}</td>
+      <td>{{item['code']}}</td>
+      <td>{{item['price']}}</td>
+      <td>{{item['price_warranty']}}</td>
+      <td>{{item['number']}}</td>
+      <td>{{item['exist']}}</td>
+      <td>
+        <div *ngIf="item['active']">فعال</div>
+        <div *ngIf="!item['active']">غیرفعال</div>
+     </td>
       <td>
         <i
-        class="fa fa-edit text-muted" [routerLink]="['/admin/panel/product/updateproduct']"
-        data-toggle="modal"
-        data-target="#modal_updateTakhfif"
+        class="fa fa-edit text-muted" [routerLink]="['/admin/panel/product/updateproduct',item['_id']]" routerLinkActive="active"
+
       ></i>
       </td>
       <td>
@@ -46,59 +47,11 @@
           class="fa fa-trash text-danger"
           data-toggle="modal"
           data-target="#modal_dialogDeleteNew"
+          (click)="readID(item['_id'])"
         ></i>
       </td>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>345698</td>
-      <td>صندلی راحتی هوشمند-
-      </td>
-      <td>12000</td>
-      <td>بر اساس نقشه مغزی افراد و سفارش مشتری حداکثر 4 حالت برای4 نفر</td>
-      <td>10</td>
-      <td> صندلی</td>
-      <td>فعال </td>
-      <td>
-        <i
-          class="fa fa-edit text-muted" [routerLink]="['/admin/panel/product/updateproduct']"
-          data-toggle="modal"
-          data-target="#modal_updateTakhfif"
-        ></i>
-      </td>
-      <td>
-        <i
-          class="fa fa-trash text-danger"
-          data-toggle="modal"
-          data-target="#modal_dialogDeleteNew"
-        ></i>
-      </td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>345698</td>
-      <td>صندلی راحتی هوشمند-
-      </td>
-      <td>12000</td>
-      <td>بر اساس نقشه مغزی افراد و سفارش مشتری حداکثر 4 حالت برای4 نفر</td>
-      <td>10</td>
-      <td> صندلی</td>
-      <td>فعال </td>
-      <td>
-        <i
-        class="fa fa-edit text-muted" [routerLink]="['/admin/panel/product/updateproduct']"
-        data-toggle="modal"
-        data-target="#modal_updateTakhfif"
-      ></i>
-      </td>
-      <td>
-        <i
-          class="fa fa-trash text-danger"
-          data-toggle="modal"
-          data-target="#modal_dialogDeleteNew"
-        ></i>
-      </td>
-    </tr>
+
   </tbody>
 </table>
 <nav aria-label="...">
@@ -150,6 +103,7 @@
           class="btn btn-info btn-rounded text-white"
           style="margin-top: -8px;margin-bottom: -8px"
           data-dismiss="modal"
+          (click)="onDelete()"
         >
           بله
         </button>

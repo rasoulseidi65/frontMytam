@@ -11,7 +11,7 @@
             <div class="row">
               <div class="col-md-9 col-lg-9 col-sm-12">
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label>عنوان محصول:</label>
                     </div>
@@ -19,6 +19,7 @@
                       <input
                         formControlName="name"
                         class="form-control"
+                        [(ngModel)]="product.name"
                         placeholder="نام محصول را وارد نمائید"
                       />
 
@@ -34,7 +35,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label>کد محصول:</label>
                     </div>
@@ -42,6 +43,7 @@
                       <input
                         formControlName="code"
                         class="form-control"
+                        [(ngModel)]="product.code"
                         placeholder="کد محصول را وارد نمائید"
                       />
 
@@ -57,7 +59,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label>قیمت محصول:</label>
                     </div>
@@ -65,6 +67,7 @@
                       <input
                         formControlName="price"
                         class="form-control"
+                        [(ngModel)]="product.price"
                         placeholder="قیمت محصول را وارد نمائید"
                       />
 
@@ -80,7 +83,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label>قیمت گارانتی محصول:</label>
                     </div>
@@ -88,6 +91,7 @@
                       <input
                         formControlName="price_garranty"
                         class="form-control"
+                        [(ngModel)]="product.price_garranty"
                         placeholder="قیمت گارانتی محصول را وارد نمائید"
                       />
 
@@ -106,14 +110,15 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> استفاده محصول:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-xs-9">
                       <input
-                        formControlName="price_garranty"
+                        formControlName="use"
                         class="form-control"
+                        [(ngModel)]="product.use"
                         placeholder="استفاده  محصول را وارد نمائید"
                       />
 
@@ -129,7 +134,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> تعداد محصول:</label>
                     </div>
@@ -137,6 +142,7 @@
                       <input
                         formControlName="number"
                         class="form-control"
+                        [(ngModel)]="product.number"
                         placeholder="  تعداد را وارد نمائید"
                       />
 
@@ -154,7 +160,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> کلید واژه محصول:</label>
                     </div>
@@ -162,6 +168,7 @@
                       <input
                         formControlName="keyword"
                         class="form-control"
+                        [(ngModel)]="product.keyword"
                         placeholder="  کلید واژه را وارد نمائید"
                       />
 
@@ -179,12 +186,14 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> جزئیات محصول:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-xs-9">
-                      <ckeditor  formControlName="description"></ckeditor>
+                      <ckeditor  formControlName="description"
+                      [(ngModel)]="product.description"
+                      ></ckeditor>
 
                       <div
                         *ngIf="
@@ -201,13 +210,14 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> وضعیت محصول:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-xs-9">
                       <mat-radio-group
                       formControlName="active"
+                      [(ngModel)]="product.active"
 
                     >
                       <mat-radio-button value="true">فعال</mat-radio-button>

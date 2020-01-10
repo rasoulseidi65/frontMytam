@@ -1,62 +1,61 @@
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-info">-->
+<nav class="navbar navbar-expand-lg navbar-light bg-info menu-pc">
 
-<!--  <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--    <span class="navbar-toggler-icon"></span>-->
-<!--  </button>-->
 
-<!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-<!--    <ul class="navbar-nav mr-auto">-->
-<!--      <li class="nav-item active">-->
-<!--        <a class="nav-link" href="#">صفحه نخست <span class="sr-only">(current)</span></a>-->
-<!--      </li>-->
-<!--      <li class="nav-item dropdown">-->
-<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--          تام-->
-<!--        </a>-->
-<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--          <a class="dropdown-item" href="#">درباره ما</a>-->
-<!--          <a class="dropdown-item" href="#"> قوانین و مقررات</a>-->
-<!--          <div class="dropdown-divider"></div>-->
-<!--          <a class="dropdown-item" href="#">  افق های تام</a>-->
-<!--        </div>-->
-<!--      </li>-->
-<!--      <li class="nav-item">-->
-<!--        <a class="nav-link" href="#">محصولات</a>-->
-<!--      </li>-->
-<!--      <li class="nav-item dropdown">-->
-<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--          خدمات-->
-<!--        </a>-->
-<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--          <a class="dropdown-item" href="#">دانش نامه مغز</a>-->
-<!--          <a class="dropdown-item" href="#"> حریم خصوص مشتریان  </a>-->
-<!--          <div class="dropdown-divider"></div>-->
-<!--          <a class="dropdown-item" href="#">انتقادات ، پیشنهادات و شکایات</a>-->
-<!--        </div>-->
-<!--      </li>-->
-<!--      <li class="nav-item dropdown">-->
-<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--          نمایندگان فروش-->
-<!--        </a>-->
-<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--          <a class="dropdown-item" href="#">لیست نمایندگان</a>-->
-<!--          <a class="dropdown-item" href="#">چگونه نماینده شوید </a>-->
 
-<!--        </div>-->
-<!--      </li>-->
-<!--      <li class="nav-item">-->
-<!--      <a class="nav-link" href="#">اخبار</a>-->
-<!--    </li>-->
-<!--      <li class="nav-item">-->
-<!--      <a class="nav-link" href="#">دعوت به همکاری</a>-->
-<!--    </li>-->
-<!--      <li class="nav-item">-->
-<!--        <a class="nav-link" href="#">تماس با ما</a>-->
-<!--      </li>-->
-<!--    </ul>-->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">صفحه نخست <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          تام
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-dark" href="#">درباره ما</a>
+          <a class="dropdown-item text-dark" href="#"> قوانین و مقررات</a>
+        
+          <a class="dropdown-item text-dark" href="#">  افق های تام</a>
+        </div>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="#">محصولات</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          خدمات
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-dark" href="#">دانش نامه مغز</a>
+          <a class="dropdown-item text-dark" href="#"> حریم خصوص مشتریان  </a>
 
-<!--  </div>-->
-<!--</nav>-->
+          <a class="dropdown-item text-dark" href="#">انتقادات ، پیشنهادات و شکایات</a>
+
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          نمایندگان /فروش
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">لیست نمایندگان</a>
+          <a class="dropdown-item" href="#">چگونه نماینده شوید </a>
+
+        </div>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#">اخبار</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#">دعوت به همکاری</a>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">تماس با ما</a>
+      </li>
+     </ul>
+
+  </div>
+ </nav>
 <mat-sidenav-container class="sidenav-container" dir="rtl">
   <mat-sidenav #drawer class="sidenav " fixedInViewport="false"
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -138,7 +137,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
 
-    <mat-toolbar  class="primary-color">
+    <mat-toolbar  class="primary-color menu-mobile">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -149,7 +148,7 @@
       </button>
       <span class="mizkhedmat-title ml-5">تقویت امواج مغز (تام)</span>
       <span class="spacer"></span>
-      <div class="menu">
+      <!-- <div class="menu">
         <a mat-list-item href="#">صفحه اصلی </a>
         <button mat-button [matMenuTriggerFor]="beforeMenu2">تام<i class="fa fa-caret-down ml-1"></i></button>
         <mat-menu #beforeMenu2="matMenu" xPosition="before">
@@ -175,12 +174,10 @@
         <a mat-list-item>تماس با ما</a>
       </div>
       <div  style="margin-right: 49%">
-        <!--<ul class=" col-md-12 nav navbar-nav navbar-left float-left">-->
 
         <a target="_blank" href=""> ورود</a>
 
-        <!--</ul>-->
-      </div>
+      </div> -->
 
 
 

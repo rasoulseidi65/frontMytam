@@ -122,7 +122,7 @@ article={
       if(responseimg.success=true)
       {
         formData.append("image",responseimg.data);
-        this.service.postNews(form).subscribe(
+        this.service.updateArticle(this.id,form.value).subscribe(
           response => {
             console.log(response);
 

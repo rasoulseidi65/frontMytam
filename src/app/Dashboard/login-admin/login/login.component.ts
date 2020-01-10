@@ -43,8 +43,9 @@ export class LoginComponent implements OnInit {
   onSubmit(form: FormGroup) {
     console.log(form.value);
     this.service.getLoginAdmin(form.value).subscribe(response => {
-      if (response.success == true) {
-        console.log(response.success);
+      console.log(response);
+      if (response['success'] == true) {
+        console.log(response['success']);
         this.router.navigate(['/admin/panel']);
       }
     });

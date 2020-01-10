@@ -29,13 +29,13 @@ export class ListarticleComponent implements OnInit {
   readID(id:any){
  this.id=id;
   }
-  ngDelete(){
-   this.service.deleteArticleID(this.id).subscribe(
-     (response)=>{
-       console.log(response);
-     }
-   )
-
+  onDelete(){
+    this.service.deleteArticleID(this.id).subscribe(
+      (response)=>{
+        console.log(response);
+        this.readArticle();
+      }
+    )
   }
   ngOnInit() {
 

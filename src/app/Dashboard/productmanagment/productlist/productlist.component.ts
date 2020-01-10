@@ -1,3 +1,4 @@
+import { MytamwebserviceService } from 'src/app/services/mytamwebservice.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productlist.component.scss']
 })
 export class ProductlistComponent implements OnInit {
-
+  data:string[];
+  id:string;
   public imagePath;
   imgURL: any;
   public message: string;
@@ -15,7 +17,9 @@ export class ProductlistComponent implements OnInit {
   fileName:string;
  formGroup:FormGroup;
  myForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder , private service:MytamwebserviceService) {
+    this.readProducts();
+   }
 
   ngOnInit() {
 
@@ -63,6 +67,31 @@ export class ProductlistComponent implements OnInit {
   }
   get image() {
     return this.myForm.get("image");
+  }
+  readProducts(){
+    this.service.fetchloadProduct().subscribe(
+      (response)=>{
+        var listProducts=response.valueOf()['data'];
+        console.log( listProducts);
+        this.data=listProducts;
+        // var newsCount=listNews['items'].length;
+        // for(var i=0;i<=newsCount;i++){
+        //   this.data[i]=listNews['items'];
+          console.log(this.data[0]['title']);
+        // }
+      }
+    )
+  }
+  readID(id:any){
+ this.id=id;
+  }
+  onDelete(){
+    this.service.deleteProductID(this.id).subscribe(
+      (response)=>{
+        console.log(response);
+        this.readProducts();
+      }
+    )
   }
   onFileChange(event) {
     this.uplodefile = event.target.files;

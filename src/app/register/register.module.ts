@@ -1,3 +1,5 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -11,6 +13,8 @@ import { UserRegisterComponent } from './user-register/user-register.component';
   declarations: [UserRegisterComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RegisterRoutingModule,
     MatCheckboxModule,
     MatInputModule,

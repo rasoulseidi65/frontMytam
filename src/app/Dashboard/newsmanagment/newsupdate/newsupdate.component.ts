@@ -83,6 +83,7 @@ export class NewsupdateComponent implements OnInit {
   readNews() {
     this.service.getNewsID(this.id).subscribe(
       (data) => {
+        console.log(data);
         var l=data;
         this.news.title= l['data']['title'];
         this.news.abstract= l['data']['abstract'];
@@ -113,8 +114,8 @@ export class NewsupdateComponent implements OnInit {
           console.log(responseimg);
           if ((responseimg.success = true)) {
             form.value.image = responseimg.data.path;
-            console.log(form.value);
-            this.service.postNews(form.value).subscribe(
+            // console.log(this.id);
+            this.service.updateNews(this.id,form.value).subscribe(
               response => {
                 console.log(response);
                 this.successResult = true;
@@ -136,6 +137,7 @@ export class NewsupdateComponent implements OnInit {
       );
     }
   }
+
   onFileChange(event) {
     this.uplodefile = event.target.files;
     this.fileName= event.target.files.name;

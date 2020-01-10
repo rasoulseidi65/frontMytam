@@ -11,7 +11,7 @@
             <div class="row">
               <div class="col-md-9 col-lg-9 col-sm-12">
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> تاریخ شروع:</label>
                     </div>
@@ -39,7 +39,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> تاریخ پایان:</label>
                     </div>
@@ -68,7 +68,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label>کد محصول:</label>
                     </div>
@@ -93,31 +93,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
-                    <div class="col-md-3 col-xs-3">
-                      <label>عنوان تخفیف :</label>
-                    </div>
-                    <div class="col-md-9 col-lg-9 col-xs-9">
-                      <input
-                        formControlName="title"
-                        class="form-control"
-                        placeholder=" عنوان تخفیف را وارد نمائید"
-                      />
 
-                      <div
-                        *ngIf="title.invalid && (title.dirty || title.touched)"
-                        class="alert alert-danger"
-                      >
-                        <div *ngIf="title.errors.required">
-                          عنوان تخفیف را وارد نمائید
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> نوع تخفیف:</label>
                     </div>
@@ -143,7 +121,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> کد تخفیف:</label>
                     </div>
@@ -168,60 +146,9 @@
                     </div>
                   </div>
                 </div>
+                
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
-                    <div class="col-md-3 col-xs-3">
-                      <label> تاریخ شروع:</label>
-                    </div>
-                    <div class="col-md-9 col-lg-9 col-xs-9">
-                      <input
-                        formControlName="start_date"
-                        class="form-control"
-                        placeholder="  تاریخ شروع را وارد نمائید"
-                      />
-
-                      <div
-                        *ngIf="
-                          start_date.invalid &&
-                          (start_date.dirty || start_date.touched)
-                        "
-                        class="alert alert-danger"
-                      >
-                        <div *ngIf="start_date.errors.required">
-                          تاریخ شروع را وارد نمائید
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
-                    <div class="col-md-3 col-xs-3">
-                      <label> تاریخ پایان:</label>
-                    </div>
-                    <div class="col-md-9 col-lg-9 col-xs-9">
-                      <input
-                        formControlName="end_date"
-                        class="form-control"
-                        placeholder="  تاریخ پایان را وارد نمائید"
-                      />
-
-                      <div
-                        *ngIf="
-                          end_date.invalid &&
-                          (end_date.dirty || end_date.touched)
-                        "
-                        class="alert alert-danger"
-                      >
-                        <div *ngIf="end_date.errors.required">
-                          تاریخ پایان را وارد نمائید
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> درصد تخفیف:</label>
                     </div>
@@ -247,25 +174,25 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> حداکثر استفاده کننده:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-xs-9">
                       <input
-                        formControlName="max_count"
+                        formControlName="max_number"
                         class="form-control"
                         placeholder="   حداکثر استفاده کننده  را وارد نمائید"
                       />
 
                       <div
                         *ngIf="
-                          max_count.invalid &&
-                          (max_count.dirty || max_count.touched)
+                        max_number.invalid &&
+                          (max_number.dirty || max_number.touched)
                         "
                         class="alert alert-danger"
                       >
-                        <div *ngIf="max_count.errors.required">
+                        <div *ngIf="max_number.errors.required">
                           حداکثر استفاده کننده را وارد نمائید
                         </div>
                       </div>
@@ -273,25 +200,25 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> حداکثر استفاده شده:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-xs-9">
                       <input
-                        formControlName="used_count"
+                        formControlName="remain_number"
                         class="form-control"
                         placeholder="   حداکثر استفاده شده  را وارد نمائید"
                       />
 
                       <div
                         *ngIf="
-                          used_count.invalid &&
-                          (used_count.dirty || used_count.touched)
+                        remain_number.invalid &&
+                          (remain_number.dirty || remain_number.touched)
                         "
                         class="alert alert-danger"
                       >
-                        <div *ngIf="used_count.errors.required">
+                        <div *ngIf="remain_number.errors.required">
                           حداکثر استفاده شده را وارد نمائید
                         </div>
                       </div>
@@ -299,7 +226,7 @@
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label> وضعیت تخفیف:</label>
                     </div>

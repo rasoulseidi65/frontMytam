@@ -1,3 +1,62 @@
 canvas{
     font-family: vazir;
 }
+h4{
+  font-family: vazir;
+  font-size: 15px;
+}
+.card{
+  border-radius: 20px;
+
+}
+// .card-body{
+//   border-color: #33b5e5;
+//   border-width: thin;
+//   border-style: solid;
+//   border-radius: 5px;
+// }
+.card-header{
+  border-radius: 20px;
+}
+.card-header h5{
+  font-family: vazir;
+  font-size: 16px;
+
+
+}
+.shap{
+  position: absolute;
+
+  font-family: FontAwesome;
+    width: 56px;
+    height: 56px;
+    background: #4fc1e9;
+    margin: auto!important;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    padding: 12px;
+    left: 0;
+    right: 0;
+    top:40px;
+    // bottom: -40px;
+    transition: all .5s;
+}
+.mx-auto:hover{
+  background-color: blue!important;
+}
+
+.card-img{
+  height: 100px;
+  width: 100px;
+  background-color: #FF8800;
+  border-radius: 50px;
+}
+.card-img:hover{
+  background-color: #00C851;
+
+}
+.card-img img{
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+}

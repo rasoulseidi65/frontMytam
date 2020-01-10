@@ -38,13 +38,13 @@ export class ListnewsComponent implements OnInit {
   readID(id:any){
  this.id=id;
   }
-  ngDelete(){
-   this.service.deleteNewsID(this.id).subscribe(
-     (response)=>{
-       console.log(response);
-     }
-   )
-
+  onDelete(){
+    this.service.deleteNewsID(this.id).subscribe(
+      (response)=>{
+        console.log(response);
+        this.readNews();
+      }
+    )
   }
   ngOnInit() {
 

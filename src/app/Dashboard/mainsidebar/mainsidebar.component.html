@@ -16,10 +16,11 @@
       >
 
       <li class="nav-item mr-4" style="list-style:none">
-        <a mat-list-item data-toggle="collapse" data-target="#demo"
-          >مدیریت اخبار <i class="fa fa-chevron-down ml-auto"></i
+        <a mat-list-item data-toggle="collapse" data-target="#demo" href="#demo" aria-expanded="true"
+        aria-controls="demo"
+          >مدیریت اخبار <i class="fa fa-chevron-down rotate-icon ml-auto"></i
         ></a>
-        <div id="demo" class="collapse">
+        <div id="demo" class="collapse show">
           <a mat-list-item class="sub-menu " [routerLink]="['/admin/panel/news']"
             ><i class="material-icons mr-3"> playlist_add </i>خبر جدید
           </a>
@@ -139,10 +140,10 @@
           مدیرست محتوای سایت <i class="fa fa-chevron-down ml-auto"></i
         ></a>
         <div id="managesection" class="collapse">
-          <a mat-list-item class="sub-menu "
+          <a mat-list-item class="sub-menu " [routerLink]="['/admin/panel/slider']"
             ><i class="material-icons  mr-3"> add_to_photos </i> مدیریت اسلایدر
           </a>
-          <a mat-list-item class="sub-menu "
+          <a mat-list-item class="sub-menu " [routerLink]="['/admin/panel/projectus']"
             ><i class="material-icons mr-3">
               list
             </i>

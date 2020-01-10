@@ -10,7 +10,7 @@ export class VideoComponent implements OnInit  {
   public imagePath;
   imgURL: any;
   public message: string;
-
+  resultSuccess:boolean=false;
   uplodefile: string;
   fileName:string;
 
@@ -33,32 +33,33 @@ export class VideoComponent implements OnInit  {
   get title() {
     return this.myForm.get("title");
   }
- 
+
 
   get keyword() {
     return this.myForm.get("keyword");
   }
 
   onSubmit(form: FormGroup) {
-    const formData = new FormData();
     const formDataUploadfile = new FormData();
-    formData.append("title", form.value.title);
-
-    formData.append("keyword", form.value.keyword);
     console.log(this.uplodefile.length);
     if(this.uplodefile.length>0)
     {
     for (var i = 0; i < this.uplodefile.length; i++) {
-      formDataUploadfile.append("image", this.uplodefile[i], this.fileName);
+      formDataUploadfile.append("video", this.uplodefile[i], this.fileName);
     }
-    this.service.postUplodeFile(formDataUploadfile).subscribe(responseimg => {
+    this.service.postUplodeFileVideo(formDataUploadfile).subscribe(responseimg => {
       console.log(responseimg);
       if(responseimg.success=true)
       {
-        formData.append("video",responseimg.data);
-        this.service.postNews(form).subscribe(
+
+       form.value.video=responseimg.data.path;
+       console.log(form);
+        this.service.postVideo(form.value).subscribe(
           response => {
-            console.log(response);
+           this.resultSuccess=true;
+           setTimeout(()=>{
+             this.resultSuccess=false;
+           },5000);
 
           },
           error => {

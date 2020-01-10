@@ -7,7 +7,7 @@ import { VideoComponent } from "./video/video.component";
 const routes: Routes = [
   { path: "", component: VideoComponent },
   { path: "listvideo", component: ListvideoComponent },
-  { path: "videoupdate", component: VideoupdateComponent }
+  { path: "videoupdate/:id", component: VideoupdateComponent }
 
 
 

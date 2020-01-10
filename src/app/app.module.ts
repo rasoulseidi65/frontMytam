@@ -7,11 +7,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatrialModule } from "./shared/matrial.module";
 import { FormsModule } from "@angular/forms";
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { NgScrolltopModule } from 'ng-scrolltop';
+
+import { JwtModule } from '@auth0/angular-jwt';
 @NgModule({
   declarations: [AppComponent,],
   imports: [
-    NgScrolltopModule,
+
     BrowserModule,
     FormsModule,
     AppRoutingModule,
@@ -19,6 +20,7 @@ import { NgScrolltopModule } from 'ng-scrolltop';
     BrowserAnimationsModule,
     MatrialModule,
     NgxSpinnerModule,
+   
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

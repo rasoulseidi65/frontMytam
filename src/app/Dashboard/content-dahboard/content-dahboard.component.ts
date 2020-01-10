@@ -7,6 +7,9 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
   styleUrls: ['./content-dahboard.component.scss']
 })
 export class ContentDahboardComponent implements OnInit {
+  flagNews:boolean=true;
+  flagArticle:boolean=true;
+  flagMember:boolean=true;
   public pieChartLabels = [' مقدار فروش', ' تعداد مشتری', 'Sales Q3', 'Sales Q4'];
   public pieChartData = [120, 150, 180, 90];
   public pieChartType = 'pie';
@@ -23,5 +26,22 @@ export class ContentDahboardComponent implements OnInit {
   ];
   constructor() { }
   ngOnInit() {
+  }
+  closeCard(data:any){
+    if(data=='news')
+    {
+    this.flagNews=!this.flagNews;
+    }
+    if(data=='article')
+    {
+      this.flagArticle=!this.flagArticle;
+
+    }
+    if(data=='member')
+    {
+      this.flagMember=!this.flagMember;
+
+    }
+    console.log(this.flagArticle+"+"+this.flagMember+"+"+this.flagNews)
   }
 }

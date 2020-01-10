@@ -1,6 +1,7 @@
+import { ActivatedRoute } from '@angular/router';
 import { MytamwebserviceService } from './../../../services/mytamwebservice.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-videoupdate',
@@ -8,6 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./videoupdate.component.scss']
 })
 export class VideoupdateComponent implements OnInit {
+  @Input() id:String;
+  videos={
+    title:'',
+    video:'',
+    keyword:''
+  }
   public imagePath;
   imgURL: any;
   public message: string;
@@ -18,15 +25,17 @@ export class VideoupdateComponent implements OnInit {
   myForm: FormGroup;
   constructor(
     private service: MytamwebserviceService,
-    private  fb: FormBuilder
+    private  fb: FormBuilder,
+    private route:ActivatedRoute
   ) {
+    this.route.paramMap.subscribe(params => (this.id = params.get("id")));
+    this.readVideo();
 
   }
 
   ngOnInit() {
     this.myForm = this.fb.group({
       title: ['', Validators.required],
-
       keyword: ['', Validators.required],
 
     });
@@ -39,25 +48,37 @@ export class VideoupdateComponent implements OnInit {
   get keyword() {
     return this.myForm.get("keyword");
   }
+  readVideo() {
+    this.service.getVideoID(this.id).subscribe(
+      (data) => {
+        console.log(data);
+        var l=data;
+        this.videos.title= l['data']['title'];
+        this.videos.keyword= l['data']['keyword'];
+        this.videos.video= l['data']['video'];
 
+      },
+
+      (error: any) => {
+        console.log(error);
+      }
+    );
+  }
   onSubmit(form: FormGroup) {
-    const formData = new FormData();
-    const formDataUploadfile = new FormData();
-    formData.append("title", form.value.title);
 
-    formData.append("keyword", form.value.keyword);
-    console.log(this.uplodefile.length);
+    const formDataUploadfile = new FormData();
+
     if(this.uplodefile.length>0)
     {
     for (var i = 0; i < this.uplodefile.length; i++) {
-      formDataUploadfile.append("image", this.uplodefile[i], this.fileName);
+      formDataUploadfile.append("video", this.uplodefile[i], this.fileName);
     }
-    this.service.postUplodeFile(formDataUploadfile).subscribe(responseimg => {
+    this.service.postUplodeFileVideo(formDataUploadfile).subscribe(responseimg => {
       console.log(responseimg);
       if(responseimg.success=true)
       {
-        formData.append("video",responseimg.data);
-        this.service.postNews(form).subscribe(
+       form.value.video=responseimg.data.path;
+        this.service.updateVideo(this.id,form.value).subscribe(
           response => {
             console.log(response);
 

@@ -17,16 +17,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>10</td>
-      <td>dsgsdg</td>
+    <tr *ngFor="let item of data; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{item['title']}}</td>
+      <td>{{item['keyword']}}</td>
 
       <td>
         <i
-          class="fa fa-edit text-muted"
-          data-toggle="modal"
-          data-target="#modal_updateTakhfif"
+          class="fa fa-edit text-muted" [routerLink]="['/admin/panel/video/videoupdate',item['_id']]" routerLinkActive="active"
+
         ></i>
       </td>
       <td>
@@ -34,63 +33,12 @@
           class="fa fa-trash text-danger"
           data-toggle="modal"
           data-target="#modal_dialogDeleteNew"
+          (click)="readID(item['_id'])"
         ></i>
       </td>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>10</td>
-      <td>dsgsdg</td>
 
-      <td>
-        <i
-          class="fa fa-edit text-muted" [routerLink]="['/admin/panel/video/videoupdate']"
-        ></i>
-      </td>
-      <td>
-        <i
-          class="fa fa-trash text-danger"
-          data-toggle="modal"
-          data-target="#modal_dialogDeleteNew"
-        ></i>
-      </td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>10</td>
-      <td>dsgsdg</td>
 
-      <td>
-        <i
-        class="fa fa-edit text-muted" [routerLink]="['/admin/panel/video/videoupdate']"
-      ></i>
-      </td>
-      <td>
-        <i
-          class="fa fa-trash text-danger"
-          data-toggle="modal"
-          data-target="#modal_dialogDeleteNew"
-        ></i>
-      </td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>10</td>
-      <td>dsgsdg</td>
-
-      <td>
-        <i
-        class="fa fa-edit text-muted" [routerLink]="['/admin/panel/video/videoupdate']"
-      ></i>
-      </td>
-      <td>
-        <i
-          class="fa fa-trash text-danger"
-          data-toggle="modal"
-          data-target="#modal_dialogDeleteNew"
-        ></i>
-      </td>
-    </tr>
   </tbody>
 </table>
 <nav aria-label="...">
@@ -142,6 +90,7 @@
           class="btn btn-info btn-rounded text-white"
           style="margin-top: -8px;margin-bottom: -8px"
           data-dismiss="modal"
+          (click)="onDelete()"
         >
           بله
         </button>

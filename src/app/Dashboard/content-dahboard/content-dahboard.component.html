@@ -1,29 +1,254 @@
-<div class="container mt-5">
-
-
-    <div class="row">
-      <div class="col-md-6 col-lg-6 col-sm-6">
-        <div style="display: block">
-          <canvas baseChart
-                  [data]="pieChartData"
-                  [labels]="pieChartLabels"
-                  [chartType]="pieChartType"></canvas>
-        </div>
+<div class="container mt-5" style="height: 700px;">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 col-sm-6">
+      <div style="display: block">
+        <canvas
+          baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+        ></canvas>
       </div>
-      <div class="col-md-6 col-lg-6 col-sm-6">
-        <div style="display: block">
-          <canvas baseChart
-                  [datasets]="barChartData"
-                  [labels]="barChartLabels"
-                  [options]="barChartOptions"
-                  [legend]="barChartLegend"
-                  [chartType]="barChartType">
-          </canvas>
-        </div>
-        </div>
     </div>
-   
+    <div class="col-md-6 col-lg-6 col-sm-6">
+      <div style="display: block">
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-15">
+    <div class="col-md-4 col-lg-4">
+      <!--Accordion wrapper-->
+      <div
+        class="accordion md-accordion"
+        id="accordionEx"
+        role="tablist"
+        aria-multiselectable="true"
+      >
+        <!-- Accordion card -->
+        <div class="card">
+          <!-- Card header -->
+          <div
+            style="height: 65px;"
+            class="card-header text-center primary-color text-white"
+            role="tab"
+            id="headingOne1"
+            data-toggle="collapse"
+            data-parent="#accordionEx"
+            href="#collapseOne1"
+            aria-expanded="true"
+            aria-controls="collapseOne1"
+            (click)="closeCard('news')"
+          >
+            <h5 class="mb-0 text-white text-center">
+              مدیریت اخبار
+            </h5>
+            <div class="shap" *ngIf="flagNews">
+              <a
+                data-toggle="collapse"
+                data-parent="#accordionEx"
+                href="#collapseOne1"
+                aria-expanded="false"
+                aria-controls="collapseOne1"
+              >
+                <i
+                  class="fa text-white text-center fa-angle-up fa-2x rotate-icon"
+                ></i>
+              </a>
+            </div>
+          </div>
 
+          <!-- Card body -->
+          <div
+            id="collapseOne1"
+            class="collapse show"
+            role="tabpanel"
+            aria-labelledby="headingOne1"
+            data-parent="#accordionEx"
+          >
+            <div class="card-body h-100">
+              <div class="d-flex">
+                <div  class="mr-auto card-img">
+                  <img
+                    src="./assets/images/News.png"
+                    alt="woman avatar"
+                    style="margin-top: 20px;margin-right: 20px; height: 60; width: 60px;"
 
+                  />
+                  <h4 style="margin-top:20px;">خبر جدید</h4>
+                </div>
+                <div class="card-img">
+                  <img  src="./assets/images/News.png" alt="woman avatar"
+                  style="margin-top: 20px;margin-right: 20px; height: 60; width: 60px;"
+                  />
+                  <h4 style="margin-top:20px;">لیست خبرها </h4>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion card -->
+      </div>
+      <!-- Accordion wrapper -->
+    </div>
+    <div class="col-md-4 col-lg-4">
+      <!--Accordion wrapper-->
+      <div
+        class="accordion md-accordion"
+        id="accordionEx2"
+        role="tablist"
+        aria-multiselectable="true"
+      >
+        <!-- Accordion card -->
+        <div class="card">
+          <!-- Card header -->
+          <div
+            style="height: 65px;"
+            class="card-header text-center primary-color text-white"
+            role="tab"
+            id="headingOne2"
+            data-toggle="collapse"
+            data-parent="#accordionEx2"
+            href="#collapseOne2"
+            aria-expanded="true"
+            aria-controls="collapseOne2"
+            (click)="closeCard('article')"
+          >
+            <h5 class="mb-0 text-white text-center">
+              مدیریت مقالات
+            </h5>
+            <div class="shap" *ngIf="flagArticle">
+              <a
+                data-toggle="collapse"
+                data-parent="#accordionEx2"
+                href="#collapseOne2"
+                aria-expanded="false"
+                aria-controls="collapseOne2"
+              >
+                <i
+                  class="fa text-white text-center fa-angle-up fa-2x rotate-icon"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card body -->
+          <div
+            id="collapseOne2"
+            class="collapse show"
+            role="tabpanel"
+            aria-labelledby="headingOne2"
+            data-parent="#accordionEx"
+          >
+          <div class="card-body h-100">
+            <div class="d-flex">
+              <div  class="mr-auto card-img">
+                <img
+                  src="./assets/images/Article.png"
+                  alt="woman avatar"
+                  style="margin-top: 20px;margin-right: 20px; height: 60; width: 60px;"
+
+                />
+                <h4 style="margin-top:20px;">مقاله جدید</h4>
+              </div>
+              <div class="card-img">
+                <img  src="./assets/images/Article.png" alt="woman avatar"
+                style="margin-top: 20px;margin-right: 20px; height: 60; width: 60px;"
+                />
+                <h4 style="margin-top:20px;">لیست مقاله ها </h4>
+              </div>
+
+            </div>
+          </div>
+          </div>
+        </div>
+        <!-- Accordion card -->
+      </div>
+      <!-- Accordion wrapper -->
+    </div>
+    <div class="col-md-4 col-lg-4">
+      <!--Accordion wrapper-->
+      <div
+        class="accordion md-accordion"
+        id="accordionEx3"
+        role="tablist"
+        aria-multiselectable="true"
+      >
+        <!-- Accordion card -->
+        <div class="card">
+          <!-- Card header -->
+          <div
+            style="height: 65px;"
+            class="card-header text-center primary-color text-white"
+            role="tab"
+            id="headingOne3"
+            data-toggle="collapse"
+            data-parent="#accordionEx3"
+            href="#collapseOne3"
+            aria-expanded="true"
+            aria-controls="collapseOne3"
+            (click)="closeCard('member')"
+          >
+            <h5 class="mb-0 text-white text-center">
+              مدیریت اعضا
+            </h5>
+            <div class="shap" *ngIf="flagMember">
+              <a
+                data-toggle="collapse"
+                data-parent="#accordionEx3"
+                href="#collapseOne3"
+                aria-expanded="false"
+                aria-controls="collapseOne3"
+              >
+                <i
+                  class="fa text-white text-center fa-angle-up fa-2x rotate-icon"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card body -->
+          <div
+            id="collapseOne3"
+            class="collapse show"
+            role="tabpanel"
+            aria-labelledby="headingOne3"
+            data-parent="#accordionEx"
+          >
+          <div class="card-body h-100">
+            <div class="d-flex">
+              <div  class="mr-auto card-img">
+                <img
+                  src="./assets/images/Sitemember.png"
+                  alt="woman avatar"
+                  style="margin-top: 20px;margin-right: 20px; height: 60; width: 60px;"
+
+                />
+                <h4 style="margin-top:20px;">اعضای جدید</h4>
+              </div>
+              <div class="card-img">
+                <img  src="./assets/images/Sitemember.png" alt="woman avatar"
+                style="margin-top: 20px;margin-right: 20px; height: 60; width: 60px;"
+                />
+                <h4 style="margin-top:20px;">لیست  اعضاء </h4>
+              </div>
+
+            </div>
+          </div>
+          </div>
+        </div>
+        <!-- Accordion card -->
+      </div>
+      <!-- Accordion wrapper -->
+    </div>
+  </div>
 </div>
-

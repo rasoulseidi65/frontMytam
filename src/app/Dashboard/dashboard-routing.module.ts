@@ -93,6 +93,28 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: "slider",
+    component: DashboardComponent,
+    children: [
+      {
+        path: "",
+        loadChildren:
+          "./slidermanagment/slidermanagment.module#SlidermanagmentModule"
+      }
+    ]
+  },
+  {
+    path: "projectus",
+    component: DashboardComponent,
+    children: [
+      {
+        path: "",
+        loadChildren:
+          "./projectmanagment/projectmanagment.module#ProjectmanagmentModule"
+      }
+    ]
+  },
 ];
 
 @NgModule({

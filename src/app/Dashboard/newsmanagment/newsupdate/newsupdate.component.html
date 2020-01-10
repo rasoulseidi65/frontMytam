@@ -14,7 +14,7 @@
           <div class="row ">
             <div class="col-md-9 col-lg-9 col-sm-12">
               <div class="col-md-12 mb-3">
-                <div class="input-group flex-nowrap">
+                <div class="input-group ">
                   <div class="col-md-3 col-xs-3">
                     <label>   تاریخ :</label>
                   </div>
@@ -26,6 +26,7 @@
                 formControlName="date"
                 mode="day"
 
+
                 placeholder="تاریخ  را وارد نمائید"
                 theme="dp-material">
               </dp-date-picker>
@@ -35,7 +36,7 @@
                 </div>
                 </div>
                 <div class="col-md-12 mb-3">
-                  <div class="input-group flex-nowrap">
+                  <div class="input-group ">
                     <div class="col-md-3 col-xs-3">
                       <label>  زمان خبر:</label>
                     </div>
@@ -61,7 +62,7 @@
 
                 </div>
               <div class="col-md-12 mb-3">
-                <div class="input-group flex-nowrap">
+                <div class="input-group ">
                   <div class="col-md-3 col-xs-3"><label>گروه خبری:</label></div>
                   <div class="col-md-9 col-xs-9">
                     <div class="input-group-prepend ">
@@ -79,7 +80,7 @@
                 </div>
               </div>
               <div class="col-md-12 mb-3">
-                <div class="input-group flex-nowrap">
+                <div class="input-group ">
                   <div class="col-md-3 col-xs-3"><label>عنوان خبر:</label></div>
                   <div class="col-md-9 col-xs-9">
                     <div class="input-group-prepend">
@@ -103,7 +104,7 @@
                 </div>
               </div>
               <div class="col-md-12 mb-3">
-                <div class="input-group flex-nowrap">
+                <div class="input-group ">
                   <div class="col-md-3 col-xs-3">
                     <label>کلید واژه عنوان خبر:</label>
                   </div>
@@ -130,7 +131,7 @@
 
               </div>
               <div class="col-md-12 mb-3">
-                <div class="input-group flex-nowrap">
+                <div class="input-group ">
                   <div class="col-md-3 col-xs-3"><label>خلاصه خبر:</label></div>
                   <div class="col-md-9 col-xs-9">
                     <div class="input-group-prepend ">
@@ -153,7 +154,7 @@
                 </div>
               </div>
               <div class="col-md-12 mb-3">
-                <div class="input-group flex-nowrap">
+                <div class="input-group ">
                   <div class="col-md-3 col-xs-3">
                     <label> کلمات کلید:</label>
                   </div>
@@ -178,7 +179,7 @@
               </div>
 
               <div class="col-md-12 mb-3">
-                <div class="input-group flex-nowrap">
+                <div class="input-group ">
                   <div class="col-md-3 col-xs-3"><label> وضعیت :</label></div>
 
                   <mat-radio-group
@@ -206,11 +207,11 @@
                   </div>
               </div>
               <div class="col-md-12 mb-3 ">
-                <div class="input-group flex-nowrap">
+                <div class="input-group ">
                   <div class="col-md-3 col-xs-3">
                     <label>جزئیات خبر:</label>
                   </div>
-                  <div innerHTML="{{news.detail}}"></div>
+                  <div [innerText]="news.detail"></div>
                   <div class="col-md-9 col-xs-9">
                     <div class="input-group-prepend ">
                       <ckeditor  formControlName="detail"
